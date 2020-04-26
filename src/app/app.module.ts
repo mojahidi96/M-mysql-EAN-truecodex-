@@ -9,6 +9,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { HttpClientModule } from '@angular/common/http';
 import { DefaultLayoutComponent } from './layout/default-layout/default-layout.component';
 import { BackendLayoutComponent } from './layout/backend-layout/backend-layout.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { BackendLayoutComponent } from './layout/backend-layout/backend-layout.c
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

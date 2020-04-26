@@ -8,7 +8,18 @@ import { BackendHeaderComponent } from './backend-header/backend-header.componen
 import { BackendFooterComponent } from './backend-footer/backend-footer.component';
 
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent, BackendHeaderComponent, BackendFooterComponent],
+  declarations: [
+    HeaderComponent,
+    FooterComponent,
+    BackendHeaderComponent,
+    BackendFooterComponent
+  ],
+  exports: [
+    HeaderComponent,
+    FooterComponent,
+    BackendHeaderComponent,
+    BackendFooterComponent
+  ],
   imports: [
     CommonModule,
     SharedRoutingModule
