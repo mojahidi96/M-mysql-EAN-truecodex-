@@ -26,4 +26,7 @@ export class AuthService {
             catchError(this.handleError('signup', null))
         )
     }
+    login(data: User) {
+        return this.http.post(`${this.apiUrl}/login`, data, this.httpOption).pipe(catchError(this.handleError('login', null)))
+    }
 }

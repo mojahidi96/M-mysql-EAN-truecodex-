@@ -12,7 +12,6 @@ import { passwordMatchValidator } from 'src/app/shared/validators/password-match
 export class SignupComponent implements OnInit {
   title: string;
   signupForm: FormGroup;
-  model: any;
 
   constructor(
     private fb: FormBuilder,
@@ -38,8 +37,7 @@ export class SignupComponent implements OnInit {
   get f() { return this.signupForm.controls }
 
   onSubmit() {
-    this.model = this.signupForm.value;
-    this.authService.signup(this.model).subscribe(
+    this.authService.signup(this.signupForm.value).subscribe(
       result => {
         if (!result.error()) {
           this.router.navigateByUrl('/auth/login');

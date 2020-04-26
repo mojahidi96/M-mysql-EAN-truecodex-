@@ -1,0 +1,20 @@
+<table class="table" *ngIf="products">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Sku</th>
+            <th scope="col">Price</th>
+            <th scope="col">created_at</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of products; let i=index">
+            <th scope="row">{{i+1}}</th>
+            <td>{{product.name}}</td>
+            <td>{{product.sku}}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.created_at}}</td>
+        </tr>
+    </tbody>
+</table>
