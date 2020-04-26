@@ -9,6 +9,7 @@ import { User } from '../models/user';
     providedIn: 'root'
 })
 export class AuthService {
+
     private apiUrl = `${environment.apiUrl}/auth`;
     private handleError: HandlerError;
 
@@ -28,5 +29,8 @@ export class AuthService {
     }
     login(data: User) {
         return this.http.post(`${this.apiUrl}/login`, data, this.httpOption).pipe(catchError(this.handleError('login', null)))
+    }
+    facebookLogin() {
+        return this.http.get(`${this.apiUrl}/facebook/callback`).pipe(catchError(this.handleError('facebookLogin', null)))
     }
 }

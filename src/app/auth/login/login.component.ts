@@ -37,4 +37,15 @@ export class LoginComponent implements OnInit {
         }
       })
   }
+  loginWithFB() {
+    this.authService.facebookLogin().subscribe(
+      result => {
+        console.log(result);
+        if (result.token) {
+          localStorage.setItem('token', result.token);
+          this.router.navigateByUrl('/backend/product');
+          // alert('success')
+        }
+      })
+  }
 }
